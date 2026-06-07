@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj zadanie</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+
+            <h1>Dodaj zadanie</h1>
+
+            <nav class="navigation">
+                <a href="/">Strona główna</a>
+                <a href="/tasks">Lista zadań</a>
+            </nav>
+
+        </header>
+
+        <section class="content">
+
+            <form action="/tasks/create" method="POST">
+
+                <label for="title">Tytuł</label>
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    required
+                >
+
+                <label for="description">Opis</label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="5"
+                ></textarea>
+
+                <label for="assignedUser">
+                    Przypisany użytkownik
+                </label>
+
+                <input
+                    type="text"
+                    id="assignedUser"
+                    name="assignedUser"
+                    required
+                >
+
+                <div class="actions">
+
+                    <button type="submit">
+                        Dodaj zadanie
+                    </button>
+
+                    <a class="button" href="/tasks">
+                        Anuluj
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
