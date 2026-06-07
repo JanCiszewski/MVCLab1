@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= task.title %></title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+
+            <h1><%= task.title %></h1>
+
+            <nav class="navigation">
+                <a href="/">Strona główna</a>
+                <a href="/tasks">Lista zadań</a>
+            </nav>
+
+        </header>
+
+        <section class="content">
+
+            <p>
+                <strong>Opis:</strong>
+                <%= task.description %>
+            </p>
+
+            <p>
+                <strong>Przypisany użytkownik:</strong>
+                <%= task.assignedUser %>
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                <%= task.status %>
+            </p>
+
+            <div class="actions">
+
+                <a class="button" href="/tasks/edit/<%= task.id %>">
+                    Edytuj
+                </a>
+
+                <form action="/tasks/delete/<%= task.id %>" method="POST">
+
+                    <button type="submit">
+                        Usuń
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>

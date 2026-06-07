@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edycja zadania</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+
+            <h1>Edycja zadania</h1>
+
+            <nav class="navigation">
+                <a href="/">Strona główna</a>
+                <a href="/tasks">Lista zadań</a>
+            </nav>
+
+        </header>
+
+        <section class="content">
+
+            <form
+                action="/tasks/edit/<%= task.id %>"
+                method="POST"
+            >
+
+                <label for="title">Tytuł</label>
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value="<%= task.title %>"
+                    required
+                >
+
+                <label for="description">Opis</label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="5"
+                ><%= task.description %></textarea>
+
+                <label for="assignedUser">
+                    Przypisany użytkownik
+                </label>
+
+                <input
+                    type="text"
+                    id="assignedUser"
+                    name="assignedUser"
+                    value="<%= task.assignedUser %>"
+                    required
+                >
+
+                <label for="status">Status</label>
+
+                <select
+                    id="status"
+                    name="status"
+                >
+
+                    <option
+                        value="Do zrobienia"
+                        <%= task.status === "Do zrobienia" ? "selected" : "" %>
+                    >
+                        Do zrobienia
+                    </option>
+
+                    <option
+                        value="W trakcie"
+                        <%= task.status === "W trakcie" ? "selected" : "" %>
+                    >
+                        W trakcie
+                    </option>
+
+                    <option
+                        value="Zrobione"
+                        <%= task.status === "Zrobione" ? "selected" : "" %>
+                    >
+                        Zrobione
+                    </option>
+
+                </select>
+
+                <div class="actions">
+
+                    <button type="submit">
+                        Zapisz zmiany
+                    </button>
+
+                    <a
+                        class="button"
+                        href="/tasks/<%= task.id %>"
+                    >
+                        Anuluj
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>

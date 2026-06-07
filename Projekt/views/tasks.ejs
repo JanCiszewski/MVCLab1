@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista zadań</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+
+            <h1>System zarządzania zadaniami</h1>
+
+            <nav class="navigation">
+                <a href="/">Strona główna</a>
+                <a href="/tasks/create">Dodaj zadanie</a>
+            </nav>
+
+        </header>
+
+        <section class="filters">
+            <a class="<%= !selectedStatus ? 'active-filter' : '' %>" href="/tasks">
+                Wszystkie
+            </a>
+            <a class="<%= selectedStatus === 'Do zrobienia' ? 'active-filter' : '' %>" href="/tasks?status=Do zrobienia">
+                Do zrobienia
+            </a>
+            <a class="<%= selectedStatus === 'W trakcie' ? 'active-filter' : '' %>" href="/tasks?status=W trakcie">
+                W trakcie
+            </a>
+            <a class="<%= selectedStatus === 'Zrobione' ? 'active-filter' : '' %>" href="/tasks?status=Zrobione">
+                Zrobione
+            </a>
+        </section>
+
+        <section class="content">
+
+            <h2>Lista zadań</h2>
+
+            <table class="tasks-table">
+
+                <thead>
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Przypisany użytkownik</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <% tasks.forEach(task => { %>
+
+                        <tr>
+
+                            <td>
+                                <a href="/tasks/<%= task.id %>">
+                                    <%= task.title %>
+                                </a>
+                            </td>
+
+                            <td>
+                                <%= task.assignedUser %>
+                            </td>
+
+                            <td>
+                                <%= task.status %>
+                            </td>
+
+                        </tr>
+
+                    <% }) %>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>

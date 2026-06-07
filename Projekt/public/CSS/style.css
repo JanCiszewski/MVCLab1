@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.navigation {
+    display: flex;
+    gap: 15px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.active-filter {
+    background-color: #2563eb !important;
+    color: white !important;
+}
+
+.filters a {
+    text-decoration: none;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #374151;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.filters a:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+.content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.content h2 {
+    margin-bottom: 20px;
+}
+
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tasks-table th {
+    background-color: #2563eb;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.tasks-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tasks-table tr:hover {
+    background-color: #f9fafb;
+}
+
+.tasks-table a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.tasks-table a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input,
+textarea,
+select {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button,
+.button {
+    display: inline-block;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover,
+.button:hover {
+    background-color: #1d4ed8;
+}
+
+.actions form {
+    margin: 0;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
